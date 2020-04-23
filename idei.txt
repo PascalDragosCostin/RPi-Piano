@@ -1,0 +1,26 @@
+pagina de login
+	pian cu 7 octave
+	digitii sa scrie ce tasta am apasat / cu leduri sa fie scrisa tasta
+	led pentru fiecare octava
+	sistem automat reglare temperatura in care se poate seta temperatura si histerezis on/off si pe led bar sa apara linii in functie de temperatura (ca un termometru cu mercur) fie de la senzor interio, fie de la senzor exterior
+	
+
+
+SOFT:
+
+LOGIN (permitea unui singurl client)
+taburi intr-o bara de navigare:
+	- Ajutor in RO
+	- Help in En
+	- Despre in RO
+	- About in Engleza
+	- Poze, Video
+	- Pianul efectiv care trimite comenzi la buzzer
+	
+
+HARD:
+
+- buzzer, dioda, tranzistor
+- leduri pentru fiecare octava (7 albastre)
+- leduri pentru fiecare tasta apasata (7 albe + 5 negre??)
+? 4 digit 7 segment display care sa arate tasta apasata

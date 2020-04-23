@@ -1,245 +1,64 @@
 <html>
-    <head>
-        <title>Piano</title>
 
-        <meta charset='utf-8'>
-        <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css'/>
-        <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
-		
-    </head>
-    <body>
+<head>
+    <title>Piano</title>
+
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css' />
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+
+</head>
+
+<body>
     <div class='container-fluid'>
         <div class='row'>
             <div class='col-sm-12 col-xs-12 text-center'>
-                <p style='color: blue; font-size: 7vh'>Piano style</p>
+                <p style='color: red; font-size: 12vh'>Piano keys</p>
             </div>
         </div>
         <div class='row'>
             <div class='col-sm-12 col-xs-12 d-flex justify-content-center'>
-                <div id='c1' class='whiteKey'> <p class='whiteKeyText'>C6</p> </div>
-                <div id='c2' class='blackKey'> <p class='blackKeyText'>CS6</p> </div>
-                <div id='c3' class='whiteKey'> <p class='whiteKeyText'>D6</p> </div>
-                <div id='c4' class='blackKey'> <p class='blackKeyText'>DS6</p> </div>
-                <div id='c5' class='whiteKey'> <p class='whiteKeyText'>E6</p> </div>
-                <div id='c6' class='whiteKey'> <p class='whiteKeyText'>F6</p> </div>
-                <div id='c7' class='blackKey'> <p class='blackKeyText'>FS6</p> </div>
-                <div id='c8' class='whiteKey'> <p class='whiteKeyText'>G6</p> </div>
-                <div id='c9' class='blackKey'> <p class='blackKeyText'>GS6</p> </div>
-                <div id='c10' class='whiteKey'> <p class='whiteKeyText'>A6</p> </div>
-                <div id='c11' class='blackKey'> <p class='blackKeyText'>AS6</p> </div>
-                <div id='c12' class='whiteKey'> <p class='whiteKeyText'>B6</p> </div>
+                <div id='c1' class='whiteKey'>
+                    <p class='whiteKeyText'>C6</p>
+                </div>
+                <div id='c2' class='blackKey'>
+                    <p class='blackKeyText'>CS6</p>
+                </div>
+                <div id='c3' class='whiteKey'>
+                    <p class='whiteKeyText'>D6</p>
+                </div>
+                <div id='c4' class='blackKey'>
+                    <p class='blackKeyText'>DS6</p>
+                </div>
+                <div id='c5' class='whiteKey'>
+                    <p class='whiteKeyText'>E6</p>
+                </div>
+                <div id='c6' class='whiteKey'>
+                    <p class='whiteKeyText'>F6</p>
+                </div>
+                <div id='c7' class='blackKey'>
+                    <p class='blackKeyText'>FS6</p>
+                </div>
+                <div id='c8' class='whiteKey'>
+                    <p class='whiteKeyText'>G6</p>
+                </div>
+                <div id='c9' class='blackKey'>
+                    <p class='blackKeyText'>GS6</p>
+                </div>
+                <div id='c10' class='whiteKey'>
+                    <p class='whiteKeyText'>A6</p>
+                </div>
+                <div id='c11' class='blackKey'>
+                    <p class='blackKeyText'>AS6</p>
+                </div>
+                <div id='c12' class='whiteKey'>
+                    <p class='whiteKeyText'>B6</p>
+                </div>
             </div>
         </div>
     </div>
-    </body>
-    <script>
-        $('#c1').on('mousedown touchstart', function(e){
-            e.preventDefault();
-            $.ajax('/c_note');
-            $('#c1').css('background', '#D8D5D4');
-        });
+</body>
+</script>
 
-        $('#c2').on('mousedown touchstart', function(e){
-            e.preventDefault();
-            $.ajax('/cs_note');
-            $('#c2').css('background', '#585757');
-        });
-
-        $('#c3').on('mousedown touchstart', function(e){
-            e.preventDefault();
-            $.ajax('/d_note');
-            $('#c3').css('background', '#D8D5D4');
-        });
-
-        $('#c4').on('mousedown touchstart', function(e){
-            e.preventDefault();
-            $.ajax('/ds_note');
-            $('#c4').css('background', '#585757');
-        });
-
-        $('#c5').on('mousedown touchstart', function(e){
-            e.preventDefault();
-            $.ajax('/e_note');
-            $('#c5').css('background', '#D8D5D4');
-        });
-
-        $('#c6').on('mousedown touchstart', function(e){
-            e.preventDefault();
-            $.ajax('/f_note');
-            $('#c6').css('background', '#D8D5D4');
-        });
-
-        $('#c7').on('mousedown touchstart', function(e){
-            e.preventDefault();
-            $.ajax('/fs_note');
-            $('#c7').css('background', '#585757');
-        });
-
-        $('#c8').on('mousedown touchstart', function(e){
-            e.preventDefault();
-            $.ajax('/g_note');
-            $('#c8').css('background', '#D8D5D4');
-        });
-
-        $('#c9').on('mousedown touchstart', function(e){
-            e.preventDefault();
-            $.ajax('/gs_note');
-            $('#c9').css('background', '#585757');
-        });
-
-        $('#c10').on('mousedown touchstart', function(e){
-            e.preventDefault();
-            $.ajax('/a_note');
-            $('#c10').css('background', '#D8D5D4');
-        });
-
-        $('#c11').on('mousedown touchstart', function(e){
-            e.preventDefault();
-            $.ajax('as_note');
-            $('#c11').css('background', '#585757');
-        });
-
-        $('#c12').on('mousedown touchstart', function(e){
-            e.preventDefault();
-            $.ajax('/b_note');
-            $('#c12').css('background', '#D8D5D4');
-        });
-
-        $('#c1,#c3,#c5,#c6,#c8,#c10,#c12').on('mouseup touchend', function(e){
-            e.preventDefault();
-            $.ajax('/off');
-            $(this).css('background', 'white');
-        });
-
-        $('#c2,#c4,#c7,#c9,#c11').on('mouseup touchend', function(e){
-            e.preventDefault();
-            $.ajax('/off');
-            $(this).css('background', 'black');
-        });
-
-        $('#c1,#c3,#c5,#c6,#c8,#c10,#c12').mouseout(function(){
-            $(this).css('background', 'white');
-            $.ajax('/off');
-        });
-
-        $('#c2,#c4,#c7,#c9,#c11').mouseout(function(){
-            $(this).css('background', 'black');
-            $.ajax('/off');
-        });
-
-        $('#c1').mouseover(function(){
-          $(this).css('background', '#E7E0DF');
-        });
-        $('#c3').mouseover(function(){
-          $(this).css('background', '#E7E0DF');
-        });
-        $('#c5').mouseover(function(){
-          $(this).css('background', '#E7E0DF');
-        });
-        $('#c6').mouseover(function(){
-          $(this).css('background', '#E7E0DF');
-        });
-        $('#c8').mouseover(function(){
-          $(this).css('background', '#E7E0DF');
-        });
-        $('#c10').mouseover(function(){
-          $(this).css('background', '#E7E0DF');
-        });
-        $('#c12').mouseover(function(){
-          $(this).css('background', '#E7E0DF');
-        });
-
-        $('#c2').mouseover(function(){
-          $(this).css('background', '#464646');
-        });
-        $('#c4').mouseover(function(){
-          $(this).css('background', '#464646');
-        });
-        $('#c7').mouseover(function(){
-          $(this).css('background', '#464646');
-        });
-        $('#c9').mouseover(function(){
-          $(this).css('background', '#464646');
-        });
-        $('#c11').mouseover(function(){
-          $(this).css('background', '#464646');
-        });
-
-        var action = true;
-        $('body').on('keydown', function(e){
-            if (action == true){
-              action = false;
-              var key = e.which;
-              console.log(key);
-              switch(z)
-              {
-                  case 90:
-                      $.ajax('/c_note');
-                      $('#c1').css('background', '#D8D5D4');
-                      break;
-                  case 83:
-                      $.ajax('/cs_note');
-                      $('#c2').css('background', '#585757');
-                      break;
-                  case 88:
-                      $.ajax('/d_note');
-                      $('#c3').css('background', '#D8D5D4');
-                      break;
-                  case 68:
-                      $.ajax('/ds_note');
-                      $('#c4').css('background', '#585757');
-                      break;
-                  case 67:
-                      $.ajax('/e_note');
-                      $('#c5').css('background', '#D8D5D4');
-                      break;
-                  case 86:
-                      $.ajax('/f_note');
-                      $('#c6').css('background', '#D8D5D4');
-                      break;
-                  case 71:
-                      $.ajax('/fs_note');
-                      $('#c7').css('background', '#585757');
-                      break;
-                  case 66:
-                      $.ajax('/g_note');
-                      $('#c8').css('background', '#D8D5D4');
-                      break;
-                  case 72:
-                      $.ajax('/gs_note');
-                      $('#c9').css('background', '#585757');
-                      break;
-                  case 78:
-                      $.ajax('/a_note');
-                      $('#c10').css('background', '#D8D5D4');
-                      break;
-                  case 74:
-                      $.ajax('/as_note');
-                      $('#c11').css('background', '#585757');
-                      break;
-                  case 77:
-                      $.ajax('/b_note');
-                      $('#c12').css('background', '#D8D5D4');
-                      break;
-              }
-            }
-        });
-
-        $('body').on('keyup', function(e){
-            action = true;
-            var key = e.which;
-            if(key==90 || key==88 || key==67 || key==86 || key==66 ||key==78 ||key==77)
-            {
-                $.ajax('/off');
-                $('#c1,#c3,#c5,#c6,#c8,#c10,#c12').css('background', 'white');
-            }
-
-            if(key==83 || key==68 || key==71 || key==72 || key==74)
-            {
-                $.ajax('/off');
-                $('#c2,#c4,#c7,#c9,#c11').css('background', 'black');
-            }
-        });
-    </script>
 </html>
