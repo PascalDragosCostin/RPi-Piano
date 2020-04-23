@@ -6,21 +6,18 @@ pagina de login
 	
 
 
-SOFT:
-
-LOGIN (permitea unui singurl client)
-taburi intr-o bara de navigare:
+SOFT: Single Page Application (SPA), care sa conțină următoarele:
+LOGIN (eventual permitea unui singur client odată, pentru ca este doar un buzzer pe breadboard)
+taburi într-o bara de navigare:- Clapele pianului care trimit comenzi la buzzer (cereri POST prin HTTP)  
 	- Ajutor in RO
 	- Help in En
-	- Despre in RO
+	- Despre în RO
 	- About in Engleza
-	- Poze, Video
-	- Pianul efectiv care trimite comenzi la buzzer
+	- Poze, Video care demonstrează functionalitatea placutei
 	
 
 HARD:
-
 - buzzer, dioda, tranzistor
 - leduri pentru fiecare octava (7 albastre)
 - leduri pentru fiecare tasta apasata (7 albe + 5 negre??)
-? 4 digit 7 segment display care sa arate tasta apasata
+? 4 digit 7 segment display care sa arate tasta apasata (de exemplu C3)
