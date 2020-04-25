@@ -1,11 +1,35 @@
 :root {
-    --bright-color: #e9772a;
-    --bright-color-hover: #bb3b2a;
-    --bright-color-pressed: #c90700;
-    --dark-color: #101604;
-    --dark-color-hover: #090c02;
-    --dark-color-pressed: #090c02;
+    --bright-color: #e4ffff;
+    --bright-color-hover: #aabfbf;
+    --bright-color-pressed: #718080;
+    --dark-color: #182020;
+    --dark-color-hover: #304040;
+    --dark-color-pressed: #4d6666;
 
+
+    --bright-color2: white;
+    --bright-color-hover2: #bfbfbf;
+    --bright-color-pressed2: grey;
+    --dark-color2: black;
+    --dark-color-hover2: #333333;
+    --dark-color-pressed2: #595959;
+
+
+    --bright-color3: #7c8cf7;
+    --bright-color-hover3: #6776db;
+    --bright-color-pressed3: #5765c9;
+    --dark-color3: #020517;
+    --dark-color-hover3: #050b30;
+    --dark-color-pressed3: #050d42;
+
+
+    
+    --bright-color4: #470000;
+    --bright-color-hover4: #990000;
+    --bright-color-pressed4: #ff0000;
+    --dark-color4: #026606;
+    --dark-color-hover4: #048f09;
+    --dark-color-pressed4: #00ff00;
   }
   /*  var(--bright-color); */
   /*  var(--dark-color); */
@@ -62,6 +86,3 @@
     margin-left: -3.5vh;
   }
 
-  button {
-    font-size: 2vh !important;
-  }

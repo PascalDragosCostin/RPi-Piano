@@ -10,14 +10,9 @@ body {
 }
 
 .title {
-    font-size: 7vh
+    font-size: 5vh
 }
 
-.invert {
-    font-size: 4vh;
-    color: #182020;
-    background: #e4ffff;
-}
 
 nav {
     background: #e4ffff;
@@ -27,7 +22,7 @@ nav {
     border-top: 1vh solid white;
     border-bottom: 1vh solid white;
     cursor:pointer; 
-    font-size: 4vh;
+    font-size: 3vh;
     border-radius: 1vh;
     
 }
@@ -74,14 +69,41 @@ button{
     border-color: white;
     border-radius: 3vh;
     padding: 0.5vh 1.5vw;
-    font-weight: bold;
+    margin: 0px 0.5vw;
+
+    /* font-weight: bold; */
     box-shadow: 0.4vh 0.4vh #2c0402;
 }
 
 button:hover{
     color: #2c0402;
-    font-weight: bolder;
+    font-weight: bold;
+    background-color: #87c2c2;
     /* text-shadow: 0.1vh 0.1vh #2c0402; */
     box-shadow: 0vh 0vh #2c0402;
 
 }
+
+select
+{
+    background-color: #e4ffff;
+    border-color: white;
+    border-radius: 3vh;
+    padding: 0.5vh 1.5vw;
+    margin: 0px 0.5vw;
+}
+
+/* select:hover{
+    color: #2c0402;
+  
+    
+    box-shadow: 0vh 0vh #2c0402;
+}
+
+select-items:hover{
+    color: #2c0402;
+    font-weight: bold;
+    background-color: #87c2c2;
+
+    box-shadow: 0vh 0vh #2c0402;
+} */
