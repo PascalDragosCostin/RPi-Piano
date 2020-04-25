@@ -173,12 +173,12 @@ $("#c12").on("mousedown touchstart", function (e) {
 
 $("#c1,#c3,#c5,#c6,#c8,#c10,#c12").mouseout(function () {
     $(this).css("background", themes[selected_theme][0]);
-    $.ajax("/off");
+  //  $.ajax("/off");
 });
 
 $("#c2,#c4,#c7,#c9,#c11").mouseout(function () {
     $(this).css("background", themes[selected_theme][3]);
-    $.ajax("/off");
+  //  $.ajax("/off");
 });
 
 $("#c1,#c3,#c5,#c6,#c8,#c10,#c12").on("mouseup touchend", function (e) {
