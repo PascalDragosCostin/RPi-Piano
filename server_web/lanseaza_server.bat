@@ -1,1 +1,0 @@
-C:/Users/dcp_e/AppData/Local/Programs/Python/Python37/python.exe c:/Users/dcp_e/OneDrive/Deskrs/dcp_e/OneDrive/Desktop/Dragos/School/PW/Laboratoare/proiect1-PascalDragosCostin/server_web/server_web.py
