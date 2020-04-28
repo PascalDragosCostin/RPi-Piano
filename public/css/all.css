@@ -1,9 +1,10 @@
-#master{
+#master {
     margin: 0vh;
     padding: 0vh;
     border: 0vh;
     overflow-x: hidden;
 }
+
 body {
     background: #182020;
     color: #e4ffff;
@@ -13,7 +14,6 @@ body {
     font-size: 5vh
 }
 
-
 nav {
     background: #e4ffff;
     color: #182020;
@@ -21,10 +21,9 @@ nav {
     margin: 0px 0px;
     border-top: 1vh solid white;
     border-bottom: 1vh solid white;
-    cursor:pointer; 
+    cursor: pointer;
     font-size: 3vh;
     border-radius: 1vh;
-    
 }
 
 nav a {
@@ -32,7 +31,6 @@ nav a {
     text-decoration: none;
     padding: 5vh 1vh;
     border-radius: 0.2vh;
-
 }
 
 nav a:hover {
@@ -48,7 +46,7 @@ nav a:hover {
     padding-top: 4vh;
     padding-left: 10vh;
     padding-right: 10vh;
-    padding-bottom: 4vh;    
+    padding-bottom: 4vh;
     overflow: hidden;
 }
 
@@ -64,28 +62,25 @@ footer {
     border-radius: 1vh;
 }
 
-button{
+button {
     background-color: #e4ffff;
     border-color: white;
     border-radius: 3vh;
     padding: 0.5vh 1.5vw;
     margin: 0px 0.5vw;
-
     /* font-weight: bold; */
     box-shadow: 0.4vh 0.4vh #2c0402;
 }
 
-button:hover{
+button:hover {
     color: #2c0402;
     font-weight: bold;
     background-color: #87c2c2;
     /* text-shadow: 0.1vh 0.1vh #2c0402; */
     box-shadow: 0vh 0vh #2c0402;
-
 }
 
-select
-{
+select {
     background-color: #e4ffff;
     border-color: white;
     border-radius: 3vh;
@@ -107,3 +102,14 @@ select-items:hover{
 
     box-shadow: 0vh 0vh #2c0402;
 } */
+
+p {
+    text-indent: 30px;
+    margin-bottom: 0px;
+    margin-top: 0.5wh;
+}
+
+.ul {
+    margin: 0px 0px;
+    padding: 0px 0px;
+}

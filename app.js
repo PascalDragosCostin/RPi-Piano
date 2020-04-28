@@ -20,6 +20,31 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
+
+app.get('/', (req, res) => {
+	
+    // în fișierul views/chestionar.ejs este accesibilă variabila 'intrebari' care conține vectorul de întrebări
+    // trimit un JSON
+	res.render('piano', {});
+});
+
+
+app.get('/about', (req, res) => {
+	
+    // în fișierul views/chestionar.ejs este accesibilă variabila 'intrebari' care conține vectorul de întrebări
+    // trimit un JSON
+	res.render('about', {});
+});
+
+
+app.get('/demo', (req, res) => {
+	
+    // în fișierul views/chestionar.ejs este accesibilă variabila 'intrebari' care conține vectorul de întrebări
+    // trimit un JSON
+	res.render('demo', {});
+});
+
+
 ///////////////////////////////////////////
 let c1 = 33;
 let cs1 = 35;
@@ -107,7 +132,7 @@ let as7 = 3729;
 let b7 = 3951;
 
 let octave = 1;
-let theme = 1;
+let theme = 0;
 
 let octave1 = [c1, cs1, d1, ds1, e1, f1, fs1, g1, gs1, a1, as1, b1];
 let octave2 = [c2, cs2, d2, ds2, e2, f2, fs2, g2, gs2, a2, as2, b2];

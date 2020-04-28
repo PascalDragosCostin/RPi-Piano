@@ -1,0 +1,49 @@
+<html>
+
+<head>
+  <title>Piano</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/tiles.css">
+  <link rel="stylesheet" type="text/css" href="css/all.css">
+
+
+</head>
+
+<body>
+  <div id="master" class="container-fluid">
+
+    <header class="row">
+      <div class="dcol-sm-12 col-xs-12 col-md-12 col-lg-12 text-center">
+        <div class="title">RaspberryPi Piano</div>
+      </div>
+    </header>
+
+    <nav>
+      <div class="row">
+        <div class="col-sm-4 text-center"><a href="/about">About</a> </div>
+        <div class="col-sm-4 text-center"><a href="/">Piano</a> </div>
+        <div class="col-sm-4 text-center"><a href="/demo">Demo</a> </div>
+      </div>
+    </nav>
+
+
+
+    <main class="main">
+        <%- body -%>
+    </main>
+
+    <footer class="jos">
+
+      &copy; 2020. Pascal Dragos-Costin
+    </footer>
+  </div> <!--  master   -->
+</body>
+
+<script src="js/pressTile.js"></script>
+
+</html>

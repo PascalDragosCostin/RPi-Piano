@@ -249,8 +249,8 @@ $("body").on("keydown", function (e) {
         var key = e.which;
         switch (key) {
             case 90:
-                $.ajax("/c_note");
-                $("#c1").css("zbackground", themes[selected_theme][2]);
+                $.ajax("/cs_note");
+                $("#c1").css("background", themes[selected_theme][2]);
                 break;
             case 83:
                 $.ajax("/cs_note");
