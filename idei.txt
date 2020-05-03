@@ -1,23 +1,15 @@
 pagina de login
-	pian cu 7 octave
-	digitii sa scrie ce tasta am apasat / cu leduri sa fie scrisa tasta
-	led pentru fiecare octava
-	sistem automat reglare temperatura in care se poate seta temperatura si histerezis on/off si pe led bar sa apara linii in functie de temperatura (ca un termometru cu mercur) fie de la senzor interio, fie de la senzor exterior
+	pian 
+	? led pentru fiecare octava cu shifter
 	
-
 
 SOFT: Single Page Application (SPA), care sa conțină următoarele:
 LOGIN (eventual permitea unui singur client odată, pentru ca este doar un buzzer pe breadboard)
-taburi într-o bara de navigare:- Clapele pianului care trimit comenzi la buzzer (cereri POST prin HTTP)  
-	- Ajutor in RO
-	- Help in En
-	- Despre în RO
-	- About in Engleza
-	- Poze, Video care demonstrează functionalitatea placutei
-	
 
 HARD:
 - buzzer, dioda, tranzistor
 - leduri pentru fiecare octava (7 albastre)
-- leduri pentru fiecare tasta apasata (7 albe + 5 negre??)
-? 4 digit 7 segment display care sa arate tasta apasata (de exemplu C3)
+- 4 digit 7 segment display care sa arate frecventa sunetului
+
+! 4 rezistente la display pe catod
+

@@ -1,3 +1,4 @@
+const fs = require("fs");
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const bodyParser = require("body-parser")
@@ -18,29 +19,29 @@ app.use(express.static("public"))
 app.use(bodyParser.json());
 // utilizarea unui algoritm de deep parsing care suportă obiecte în obiecte
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use('./favicon.ico', express.static('favicon.ico'));
 
 
 app.get('/', (req, res) => {
-	
-    // în fișierul views/chestionar.ejs este accesibilă variabila 'intrebari' care conține vectorul de întrebări
-    // trimit un JSON
+
+	// în fișierul views/chestionar.ejs este accesibilă variabila 'intrebari' care conține vectorul de întrebări
+	// trimit un JSON
 	res.render('piano', {});
 });
 
 
 app.get('/about', (req, res) => {
-	
-    // în fișierul views/chestionar.ejs este accesibilă variabila 'intrebari' care conține vectorul de întrebări
-    // trimit un JSON
+
+	// în fișierul views/chestionar.ejs este accesibilă variabila 'intrebari' care conține vectorul de întrebări
+	// trimit un JSON
 	res.render('about', {});
 });
 
 
 app.get('/demo', (req, res) => {
-	
-    // în fișierul views/chestionar.ejs este accesibilă variabila 'intrebari' care conține vectorul de întrebări
-    // trimit un JSON
+
+	// în fișierul views/chestionar.ejs este accesibilă variabila 'intrebari' care conține vectorul de întrebări
+	// trimit un JSON
 	res.render('demo', {});
 });
 
@@ -166,14 +167,29 @@ octave_array = [octave1, octave2, octave3, octave4, octave5, octave6, octave7];
 // });
 ///
 
-
-function buzz(res, freq)
-{
+// var isFirst = true;
+// var buzzer = { pin16: 0, pin18: 0 }
+function buzz(res, freq) {
+	// var pin;
+	// if (freq != 0) {
+	// 	isFirst = !isFirst;
+	// }
+	// if (isFirst) {
+	// 	pin = 16;
+	// }
+	// else {
+	// 	pin = 18;
+	// }
+	console.log("buzz" + freq);
+	fs.writeFileSync("python/shared_memory.txt", freq)
+	
 	var dataToSend;
 	// spawn new child process to call the python script
-	const python = spawn('python', ['python/buzz.py', freq]);
+	/*const python = spawn('python3', ['python/buzz.py', freq]);
+	
 	// collect data from script
 	python.stdout.on('data', function (data) {
+	 
 		dataToSend = data.toString();
 		console.log(dataToSend);
 	});
@@ -183,55 +199,59 @@ function buzz(res, freq)
 		// send data to browser
 		res.send(dataToSend)
 	});
+	*/
+	res.send("ok");
+
 }
 
 
+
 app.get("/c_note", (req, res) => {
-	buzz(res, octave_array[octave-1][0]);
+	buzz(res, octave_array[octave - 1][0]);
 });
 
 app.get("/cs_note", (req, res) => {
-	buzz(res, octave_array[octave-1][1]);
+	buzz(res, octave_array[octave - 1][1]);
 });
 
 app.get("/d_note", (req, res) => {
-	buzz(res, octave_array[octave-1][2]);
+	buzz(res, octave_array[octave - 1][2]);
 });
 
 app.get("/ds_note", (req, res) => {
-	buzz(res, octave_array[octave-1][3]);
+	buzz(res, octave_array[octave - 1][3]);
 });
 
 app.get("/e_note", (req, res) => {
-	buzz(res, octave_array[octave-1][4]);
+	buzz(res, octave_array[octave - 1][4]);
 });
 
 app.get("/f_note", (req, res) => {
-	buzz(res, octave_array[octave-1][5]);
+	buzz(res, octave_array[octave - 1][5]);
 });
 
 app.get("/fs_note", (req, res) => {
-	buzz(res, octave_array[octave-1][6]);
+	buzz(res, octave_array[octave - 1][6]);
 });
 
 app.get("/g_note", (req, res) => {
-	buzz(res, octave_array[octave-1][7]);
+	buzz(res, octave_array[octave - 1][7]);
 });
 
 app.get("/gs_note", (req, res) => {
-	buzz(res, octave_array[octave-1][8]);
+	buzz(res, octave_array[octave - 1][8]);
 });
 
 app.get("/a_note", (req, res) => {
-	buzz(res, octave_array[octave-1][9]);
+	buzz(res, octave_array[octave - 1][9]);
 });
 
 app.get("/as_note", (req, res) => {
-	buzz(res, octave_array[octave-1][10]);
+	buzz(res, octave_array[octave - 1][10]);
 });
 
 app.get("/b_note", (req, res) => {
-	buzz(res, octave_array[octave-1][11]);
+	buzz(res, octave_array[octave - 1][11]);
 });
 
 
@@ -254,7 +274,7 @@ app.post("/set_theme", (req, res) => {
 });
 
 app.get("/refresh", (req, res) => {
-	res.send({octave: octave, theme:theme})
+	res.send({ octave: octave, theme: theme })
 });
 
 //////////////
