@@ -130,10 +130,12 @@ def main():
             file.close()
             
     except KeyboardInterrupt:
-        print("Python Process stops...")
-        GPIO.cleanup()
-        pi.stop()
-        print("Python Process stops2...")
+        print("Interrupt python process")
+
+    GPIO.cleanup()
+    pi.hardware_PWM(buzzer1, 0, 0)
+    pi.stop()
+    print("Python Process stops2...")
         
 
    
