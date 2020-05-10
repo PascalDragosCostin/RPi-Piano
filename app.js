@@ -3,7 +3,7 @@ const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const bodyParser = require("body-parser")
 const { spawn } = require('child_process');
-const { exec } = require("child_process");
+const { execSync } = require("child_process");
 
 
 const app = express();
@@ -40,11 +40,7 @@ app.get('/demo', (req, res) => {
 
 app.get('/stats', (req, res) => {
 	let result;
-	exec("ls -la", (error, stdout, stderr) => {
-		//consol.log(`stdout: ${stdout}`);
-		result = stdout.toString();
-		console.log(`stdout: ${result}`);
-	});
+	result = execSync("ls -la");
 	console.log(result)
 	res.render('stats', {result: result, t: "Ha"});
 });
