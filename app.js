@@ -23,26 +23,27 @@ app.use('./favicon.ico', express.static('favicon.ico'));
 
 
 app.get('/', (req, res) => {
-
-	// în fișierul views/chestionar.ejs este accesibilă variabila 'intrebari' care conține vectorul de întrebări
-	// trimit un JSON
 	res.render('piano', {});
 });
 
 
 app.get('/about', (req, res) => {
-
-	// în fișierul views/chestionar.ejs este accesibilă variabila 'intrebari' care conține vectorul de întrebări
-	// trimit un JSON
 	res.render('about', {});
 });
 
 
 app.get('/demo', (req, res) => {
-
-	// în fișierul views/chestionar.ejs este accesibilă variabila 'intrebari' care conține vectorul de întrebări
-	// trimit un JSON
 	res.render('demo', {});
+});
+
+
+app.get('/stats', (req, res) => {
+	var result;
+	exec("ls -la", (error, stdout, stderr) => {
+		console.log(`stdout: ${stdout}`);
+		result = stdout;
+	});
+	res.render('stats', {ls: result});
 });
 
 
@@ -293,7 +294,7 @@ app.listen(port, () => console.log(`Serverul rulează la adresa http://localhost
 
 
 process.on('SIGINT', function () {
-	//pythonProcess.kill("SIGINT");
+	pythonProcess.kill("SIGINT");
 	console.log("Server stops...");
 	process.exit();
 });
