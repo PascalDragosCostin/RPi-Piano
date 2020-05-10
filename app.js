@@ -44,7 +44,7 @@ app.get('/stats', (req, res) => {
 	let volts = execSync("/usr/bin/vcgencmd measure_volts core").toString();
 	let ram = execSync("/usr/bin/vcgencmd get_mem arm").toString();
 	let video = execSync("/usr/bin/vcgencmd get_mem gpu").toString();
-	let ip = execSync("ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'").toString()
+	let ip = execSync("ip -4 addr show wlan0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'").toString()
 	console.log(temp)
 	console.log(frq)
 	console.log(volts)
