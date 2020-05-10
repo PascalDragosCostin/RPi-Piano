@@ -281,9 +281,9 @@ app.get("/refresh", (req, res) => {
 console.log("Server starts...")
 
 
-const pythonProcess = spawn('python3', ['python/buzz.py', 0]);
+const python = spawn('python3', ['python/buzz.py', 0]);
 
-pythonProcess.stdout.on('data', function (data) {
+python.stdout.on('data', function (data) {
 	pythonMessage = data.toString();
 	console.log(pythonMessage);
 });
@@ -293,7 +293,7 @@ app.listen(port, () => console.log(`Serverul rulează la adresa http://localhost
 
 
 process.on('SIGINT', function () {
-	pythonProcess.kill("SIGINT");
+	python.kill("SIGINT");
 	console.log("Server stops...");
 	process.exit();
 });
