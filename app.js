@@ -56,10 +56,10 @@ app.get('/stats', (req, res) => {
 	ram = ram.split("=")[1].split("M")[0];
 	video = video.split("=")[1].split("M")[0];
 	percentage = percentage.substr(0, 5);
-	dfTotal = df.split(/\s+/)[2];
-	dfUsed = df.split(/\s+/)[3];
-	dfAvail = df.split(/\s+/)[4];
-	dfPrecentage = df.split(/\s+/)[5];
+	dfPrecentage = df.split(/\s+/)[4];
+	dfTotal = df.split(/\s+/)[1];
+	dfAvail = df.split(/\s+/)[3];
+	dfUsed = df.split(/\s+/)[2];
 	// avaibleSpace = avaibleSpace.split(" ")[0];
 	// console.log(temp);
 	// console.log(frq);
@@ -68,7 +68,7 @@ app.get('/stats', (req, res) => {
 	// console.log(video);
 	// console.log(ip);
 	res.render('stats', {temp: temp, frq: frq, volts:volts, ram:ram, percentage :percentage, video:video,
-		ip:ip, ipGlobal:ipGlobal, freeSpacePrecentage:"0" });
+		ip:ip, ipGlobal:ipGlobal, dfTotal:dfTotal, dfUsed: dfUsed, dfAvail:dfAvail, dfPrecentage: dfPrecentage});
 });
 
 
