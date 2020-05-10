@@ -34,29 +34,44 @@
 </figure>
 </p>
 
+<br>
+<br>
+<br>
+<br>
+
 <div class="dcol-sm-12 col-xs-12 col-md-12 col-lg-12 text-center">
     <div class="title">About project</div>
     <br>
 </div>
 
-
-<br>
-<br>
-<br>
-<br>
-
-
-<p><b>Name:</b> Piano simulated with a buzzer and controlled from web</p>
-<p><b>Pitch:</b> The project contains web development: front end (HTML, CSS, JAVASCRIPT), back end (Node.JS) and Python3
+<p><b>Name: </b>Piano simulated with a buzzer and controlled from web</p>
+<p><b>Pitch: </b>The project contains web development: Front-End (HTML, CSS, JavaScript), Back-End (Node.JS) and Python3
     programming on
     RaspberryPi running Raspbian (Linux). </p>
 
-<p><b>Dificulty:</b>Medium WEB programming, Medium Embedded system knowledge</p>
-<p><b>Category:</b>Raspberry Pi, Linux</p>
-<p><b>Story:</b>
+<p><b>Dificulty: </b>Medium WEB programming, Medium Embedded system knowledge</p>
+<p><b>Category: </b>Raspberry Pi, Linux</p>
+<p><b>Story: </b>
 <p>
     <p>This project combines different area of programming, like WEB development and Embedded systems.</p>
-    <p></p>
+    <p>On the RaspberryPi runs a NodeJs server. Beacause of that, the piano can be accesed by anywhere and any device that has a network
+        connection and an installed browser. The server provides a page called "Piano" in which are drawed tiles, list for themes (only visual aspects)
+        and buttons for the seven octaves.
+        <br>
+        The static part of interface is written in HTML5 and CSS3. Keys are simple divs.
+        <br>
+        The dynamic part of interface is written in JavaScript (client side), and provides visual aspect like hover or press a tile. 
+        The communication with the server (get and post methods) is also written in JavaScript. Some elementes like slected theme and selected octave are stored at server
+        for a smooth exprience.
+        <br>
+        The server processes request for different pages, but contains and the logic for interpreting the pressed keys. 
+        <br>
+        When servers starts, it spawns a python process. When a key is pressed, the servers pass the information to te python script wich controls the buzzer and the display.
+        <br>
+        The buzzer is controlled by a pwm (frquency coresponding to the note and duty cycle 50%). 
+        <br>
+        The display show the frequency of the sound that buzzer sings.
+    </p>
 </p>
 
 <p>
