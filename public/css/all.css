@@ -119,3 +119,21 @@ p {
 .stats{
     font-size: x-large;
 }
+
+
+.field {
+    display: block;
+    margin: 20px auto;
+    /* margin: 20px 5px; */
+    padding: 10px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.field label {
+    padding: 10px 0px;
+    display: inline-block;
+    width: 100px;
+    /*border:1px solid #e4ffff; */
+    /* text-align: center; */
+}
