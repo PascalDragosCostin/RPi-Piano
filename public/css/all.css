@@ -122,14 +122,14 @@ p {
 
 
 .field {
-    color: #87c2c2;
+    color: #e4ffff;
     display: block;
     margin: 20px auto;
     /* margin: 20px 5px; */
     padding: 10px;
-    width: 80%;
+    width: 90%;
     border-radius: 10px;
-    border: #87c2c2;
+    border: 3px solid #e4ffff; 
 }
 
 .field label {
@@ -138,4 +138,8 @@ p {
     width: 100px;
     /*border:1px solid #e4ffff; */
     /* text-align: center; */
+}
+
+hr{
+    border-top: 1px solid #e4ffff;
 }

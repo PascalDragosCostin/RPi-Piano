@@ -147,8 +147,9 @@ let a7 = 3520;
 let as7 = 3729;
 let b7 = 3951;
 
-let octave = 1;
+let octave = 5;
 let theme = 0;
+let isNote = 0;
 
 let octave1 = [c1, cs1, d1, ds1, e1, f1, fs1, g1, gs1, a1, as1, b1];
 let octave2 = [c2, cs2, d2, ds2, e2, f2, fs2, g2, gs2, a2, as2, b2];
@@ -288,8 +289,15 @@ app.post("/set_theme", (req, res) => {
 	res.send("ok");
 });
 
+app.post("/set_isNote", (req, res) => {
+	console.log(req.body);
+	isNote = req.body.isNote;
+	res.send("ok");
+});
+
 app.get("/refresh", (req, res) => {
-	res.send({ octave: octave, theme: theme })
+	// console.log(octave, theme, isNote)
+	res.send({ octave: octave, theme: theme, isNote: isNote })
 });
 
 //////////////

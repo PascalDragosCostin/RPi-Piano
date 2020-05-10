@@ -1,5 +1,6 @@
-var selected_octave;
+var selected_octave = 5;
 var selected_theme = 0;
+var isNote = 1;
 
 // CHANGE THEME
 
@@ -31,6 +32,12 @@ function keys_color(selected_theme) {
     $(".darkTileText").css("color", themes[selected_theme][0]);
 };
 
+$("#theme").on("change", function () {
+    selected_theme = this.selectedIndex;  // Number of selected_octave
+    // alert(selected_theme);
+    keys_color(selected_theme);  // change text on tiles
+    change_theme(selected_theme);
+});
 
 function change_theme() {
     $.ajax({
@@ -40,14 +47,21 @@ function change_theme() {
     });
 }
 
-$("#theme").on("change", function () {
-    selected_theme = this.selectedIndex;  // Number of selected_octave
+
+$("#isNote").on("change", function () {
+    isNote = this.selectedIndex;  // Number of selected_octave
     // alert(selected_theme);
-    keys_color(selected_theme);  // change text on tiles
-    change_theme();
+    keys_text(selected_octave, isNote);  // change text on tiles
+    change_isNote(isNote);
 });
 
-
+function change_isNote(isNote) {
+    $.ajax({
+        url: "/set_isNote",
+        type: "POST",
+        data: { isNote: isNote },
+    });
+}
 
 
 // CHANGE OCTAVE
@@ -60,40 +74,56 @@ function change_octave() {
     });
 }
 
-function keys_text(selected_octave) {
-    $("#k1").html("C" + selected_octave);
-    $("#k2").html("CS" + selected_octave);
-    $("#k3").html("D" + selected_octave);
-    $("#k4").html("DS" + selected_octave);
-    $("#k5").html("E" + selected_octave);
-    $("#k6").html("F" + selected_octave);
-    $("#k7").html("FS" + selected_octave);
-    $("#k8").html("G" + selected_octave);
-    $("#k9").html("GS" + selected_octave);
-    $("#k10").html("A" + selected_octave);
-    $("#k11").html("AS" + selected_octave);
-    $("#k12").html("B" + selected_octave);
-   
+function keys_text(selected_octave, isNote) {
+    if (isNote) {
+        $("#k1").html("Do" + selected_octave);
+        $("#k2").html("Do#" + selected_octave);
+        $("#k3").html("Re" + selected_octave);
+        $("#k4").html("Re#" + selected_octave);
+        $("#k5").html("Mi" + selected_octave);
+        $("#k6").html("Fa" + selected_octave);
+        $("#k7").html("Fa#" + selected_octave);
+        $("#k8").html("Sol" + selected_octave);
+        $("#k9").html("Sol#" + selected_octave);
+        $("#k10").html("La" + selected_octave);
+        $("#k11").html("La#" + selected_octave);
+        $("#k12").html("Si" + selected_octave);
+    } else {
+        $("#k1").html("C" + selected_octave);
+        $("#k2").html("CS" + selected_octave);
+        $("#k3").html("D" + selected_octave);
+        $("#k4").html("DS" + selected_octave);
+        $("#k5").html("E" + selected_octave);
+        $("#k6").html("F" + selected_octave);
+        $("#k7").html("FS" + selected_octave);
+        $("#k8").html("G" + selected_octave);
+        $("#k9").html("GS" + selected_octave);
+        $("#k10").html("A" + selected_octave);
+        $("#k11").html("AS" + selected_octave);
+        $("#k12").html("B" + selected_octave);
+    }
 };
 
 
 
 $(document).ready(function () {
-  $.getJSON("/refresh", function (e) {
-    console.log(e);
-    selected_octave = e.octave;
-    selected_theme = e.theme
-    $("#theme").val(selected_theme).change();
-    //keys_color(selected_theme);
-    keys_text(selected_octave);
+    $.getJSON("/refresh", function (e) {
+        console.log(e);
+        selected_octave = e.octave;
+        selected_theme = e.theme
+        isNote = e.isNote;
+        $("#theme").val(selected_theme).change();
+        $("#isNote").val(isNote).change();
+        //keys_color(selected_theme);
+        keys_text(selected_octave, isNote);
 
-  });
+    });
 });
 
 
 $("button").on("click", function () {
     selected_octave = this.id;  // Number of selected_octave
-    keys_text(selected_octave);  // change text on tiles
+    keys_text(selected_octave, isNote);  // change text on tiles
     change_octave();
 });
 
@@ -178,12 +208,12 @@ $("#c12").on("mousedown touchstart", function (e) {
 
 $("#c1,#c3,#c5,#c6,#c8,#c10,#c12").mouseout(function () {
     $(this).css("background", themes[selected_theme][0]);
-  //  $.ajax("/off");
+    //  $.ajax("/off");
 });
 
 $("#c2,#c4,#c7,#c9,#c11").mouseout(function () {
     $(this).css("background", themes[selected_theme][3]);
-  //  $.ajax("/off");
+    //  $.ajax("/off");
 });
 
 $("#c1,#c3,#c5,#c6,#c8,#c10,#c12").on("mouseup touchend", function (e) {
