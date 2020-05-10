@@ -59,7 +59,7 @@ app.get('/stats', (req, res) => {
 	// console.log(ram);
 	// console.log(video);
 	// console.log(ip);
-	res.render('stats', {temp: temp, frq: frq, volts:volts, ram:ram, percentage :percentage, video:video, ip:ip });
+	res.render('stats', {temp: temp, frq: frq, volts:volts, ram:ram, percentage :percentage, video:video, ip:ip, ipGlobal:ipGlobal });
 });
 
 

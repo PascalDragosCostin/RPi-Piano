@@ -4,7 +4,11 @@
 </div>
 <fieldset class="field">
     <div class="stats">
-        <p> The server runs in a local area network and has the ip: <b><%= ip %></b>.</p>
+        <% if(ip != ipGlobal)
+        {
+            <p> The server runs in a local area network and has the ip: <b><%= ip %></b>.</p>
+        }
+        <p> The global ip of the serves is: <b><%= ipGlobal %></b>.</p>
         <hr />
         <p> The temperature of the processor: <b><%= temp %> °C</b>.</p>
         <p> The frequency of the processor: <b><%= frq %> MHz</b>.</p>
