@@ -131,10 +131,12 @@ def main():
             
     except KeyboardInterrupt:
         print("Python Process stops...")
-        pass
+        GPIO.cleanup()
+        pi.stop()
+        print("Python Process stops2...")
+        
 
-    GPIO.cleanup()
-    pi.stop()
+   
 
 
 
