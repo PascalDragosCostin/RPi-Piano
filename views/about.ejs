@@ -1,132 +1,148 @@
-<div class="dcol-sm-12 col-xs-12 col-md-12 col-lg-12 text-center">
-    <div class="title">About RaspberryPi Zero WH</div>
-    <br>
-</div>
-<p><b>The Raspberry Pi</b> (/paɪ/) is a series of small single-board computers developed in the United Kingdom by the
-    Raspberry
-    Pi Foundation to promote teaching of basic computer science in schools and in developing countries</p>
+<fieldset>
+    <div class="dcol-sm-12 col-xs-12 col-md-12 col-lg-12 text-center">
+        <div class="title">About RaspberryPi Zero WH</div>
+        <br>
+    </div>
+    <p><b>The Raspberry Pi</b> (/paɪ/) is a series of small single-board computers developed in the United Kingdom by
+        the
+        Raspberry
+        Pi Foundation to promote teaching of basic computer science in schools and in developing countries</p>
 
-<p>
-    <b>The Raspberry Pi Zero WH</b> extends the Pi Zero family. Launched at the end of February 2017, the Pi Zero W has
-    all the
-    functionality of the original Pi Zero but with added connectivity.
-</p>
-<p>
-    <b>Specifications of RPi Zero WH:</b>
-<ul type="dot">
-    <li>1GHz, single-core CPU</li>
-    <li>512MB RAM</li>
-    <li>Mini HDMI and USB On-The-Go ports</li>
-    <li>Micro USB power</li>
-    <li>HAT-compatible 40-pin header</li>
-    <li>Composite video and reset headers</li>
-    <li>CSI camera connector</li>
-</ul>
-<ul>
-    <li>802.11 b/g/n wireless LAN</li>
-    <li>Bluetooth 4.1</li>
-    <li>Bluetooth Low Energy (BLE)</li>
-    <li>Pre-soldered GPIO header</li>
-</ul>
-<figure>
-    <img src="./images/Rpi.png" width="100%" alt="RPIPhoto">
-    <figcaption>RaspberryPi ZERO WH</figcaption>
-</figure>
-</p>
+    <p>
+        <b>The Raspberry Pi Zero WH</b> extends the Pi Zero family. Launched at the end of February 2017, the Pi Zero W
+        has
+        all the
+        functionality of the original Pi Zero but with added connectivity.
+    </p>
+    <p>
+        <b>Specifications of RPi Zero WH:</b>
+    <ul type="dot">
+        <li>1GHz, single-core CPU</li>
+        <li>512MB RAM</li>
+        <li>Mini HDMI and USB On-The-Go ports</li>
+        <li>Micro USB power</li>
+        <li>HAT-compatible 40-pin header</li>
+        <li>Composite video and reset headers</li>
+        <li>CSI camera connector</li>
+    </ul>
+    <ul>
+        <li>802.11 b/g/n wireless LAN</li>
+        <li>Bluetooth 4.1</li>
+        <li>Bluetooth Low Energy (BLE)</li>
+        <li>Pre-soldered GPIO header</li>
+    </ul>
+    <figure>
+        <img src="./images/Rpi.png" width="100%" alt="RPIPhoto">
+        <figcaption>RaspberryPi ZERO WH</figcaption>
+    </figure>
+    </p>
+</fieldset>
 
 <br>
 <br>
 <br>
 <br>
 
-<div class="dcol-sm-12 col-xs-12 col-md-12 col-lg-12 text-center">
-    <div class="title">About project</div>
-    <br>
-</div>
 
-<p><b>Name: </b>Piano simulated with a buzzer, controlled from WEB</p>
-<p><b>Pitch: </b>The project contains WEB development: Front-End (HTML, CSS, JavaScript), Back-End (Node.JS) and Python3
-    programming on
-    RaspberryPi running Raspbian (Linux). </p>
 
-<p><b>Dificulty: </b>Medium WEB programming, Medium Embedded systems knowledge</p>
-<p><b>Category: </b>Raspberry Pi, Linux</p>
-<p><b>Story: </b>
-<p>
-<p>This project combines different area of programming, like WEB development and Embedded systems.</p>
-<p>On the RaspberryPi runs a NodeJs server. Beacause of that, the piano can be accesed by anywhere and by any device
-    that has a network
-    connection and an installed browser. The server provides a page called "Piano" presenting tiles, a list of themes
-    (only visual aspects)
-    and buttons for the seven octaves.
-</p>
-<p>
-    The static part of interface is written in HTML5 and CSS3. Keys are simple divs.
-</p>
-<p>
-    The dynamic part of interface is written in JavaScript (client side), and provides response for actions like hover
-    or press a tile.
-    The communication with the server (get and post methods) is also written in JavaScript.
-    Some elementes like slected theme and selected octave are stored on server
-    for a smooth exprience.
-</p>
-<p>
-    The server processes request for different pages, but contains and the logic for interpreting the pressed keys.
-</p>
-<p>
-    When servers starts, it spawns a python process. When a key is pressed, the servers pass the information to te
-    python script wich controls the buzzer and the display.
-</p>
-<p>
-    The buzzer is controlled by a PWM (frequency coresponding to the note and duty cycle is always 50%).
-</p>
-<p>
-    The display show the frequency of the sound that buzzer sings.
-</p>
-</p>
+<fieldset>
+    <div class="dcol-sm-12 col-xs-12 col-md-12 col-lg-12 text-center">
+        <div class="title">About project</div>
+        <br>
+    </div>
 
-<p>
-    <b>Hardware Components:</b>
-<ul>
-    <li>RaspberryPi Zero WH </li>
-    <li>Breadboard 830p </li>
-    <li>Passive buzzer</li>
-    <li>4 Digit 7 Segment Common Cathode Display</li>
-    <li>Diode</li>
-    <li>Bipolar junction transistor</li>
-    <li>4 x 150Ω resistors</li>
-    <li>1 x 1000Ω resistor</li>
-    <li>Male-to-male jumper wires</li>
-    <li>Male-to-female jumper wires</li>
-</ul>
-</p>
-<p>
-    <b>Connections for buzzer:</b>
-<figure>
-    <img src="images/Schematic.png" alt="schematic" width="100%" height="60%">
-    <figcaption>Fig.2 - Schematic</figcaption>
-</figure>
+    <p><b>Name: </b>Piano simulated with a buzzer, controlled from WEB</p>
+    <hr \>
+    <p><b>Pitch: </b>The project contains WEB development: Front-End (HTML, CSS, JavaScript), Back-End (Node.JS) and
+        Python3
+        programming on
+        RaspberryPi running Raspbian (Linux). </p>
+    <hr \>
 
-</p>
-<br />
-<br />
-<br />
+    <p><b>Dificulty: </b>Medium WEB programming, Medium Embedded systems knowledge</p>
+    <hr \>
+    <p><b>Category: </b>Raspberry Pi, Linux</p>
+    <hr \>
+    <p><b>Story: </b>
+    <p>
+    <p>This project combines different area of programming, like WEB development and Embedded systems.</p>
+    <p>On the RaspberryPi runs a NodeJs server. Beacause of that, the piano can be accesed by anywhere and by any device
+        that has a network
+        connection and an installed browser. The server provides a page called "Piano" presenting tiles, a list of
+        themes
+        (only visual aspects)
+        and buttons for the seven octaves.
+    </p>
+    <p>
+        The static part of interface is written in HTML5 and CSS3. Keys are simple divs.
+    </p>
+    <p>
+        The dynamic part of interface is written in JavaScript (client side), and provides response for actions like
+        hover
+        or press a tile.
+        The communication with the server (get and post methods) is also written in JavaScript.
+        Some elementes like slected theme and selected octave are stored on server
+        for a smooth exprience.
+    </p>
+    <p>
+        The server processes request for different pages, but contains and the logic for interpreting the pressed keys.
+    </p>
+    <p>
+        When servers starts, it spawns a python process. When a key is pressed, the servers pass the information to te
+        python script wich controls the buzzer and the display.
+    </p>
+    <p>
+        The buzzer is controlled by a PWM (frequency coresponding to the note and duty cycle is always 50%).
+    </p>
+    <p>
+        The display show the frequency of the sound that buzzer sings.
+    </p>
+    </p>
+    <hr \>
+    <p>
+        <b>Hardware Components:</b>
+    <ul>
+        <li>RaspberryPi Zero WH </li>
+        <li>Breadboard 830p </li>
+        <li>Passive buzzer</li>
+        <li>4 Digit 7 Segment Common Cathode Display</li>
+        <li>Diode</li>
+        <li>Bipolar junction transistor</li>
+        <li>4 x 150Ω resistors</li>
+        <li>1 x 1000Ω resistor</li>
+        <li>Male-to-male jumper wires</li>
+        <li>Male-to-female jumper wires</li>
+    </ul>
+    </p>
+    <p>
+        <b>Connections for buzzer:</b>
+    <figure>
+        <img src="images/Schematic.png" alt="schematic" width="100%" height="60%">
+        <figcaption>Fig.2 - Schematic</figcaption>
+    </figure>
 
-<p>
-    <b>Software Components:</b>
-    <li>Raspberry Pi Raspbian</li>
-    <li>Python 3</li>
-<ul>
-    <li>pigpio library</li>
-    <li>RPi.GPIO</li>
-</ul>
-<li>Node.JS</li>
-<ul>
-    <li>npm</li>
-    <li>express</li>
-    <li>ejs</li>
-    <li>body-parser</li>
-    <li>nodemon (<i>optional</i>)</li>
-</ul>
+    </p>
+    <br />
+    <br />
+    <br />
 
-</p>
+    <p>
+        <b>Software Components:</b>
+        <li>Raspberry Pi Raspbian</li>
+        <li>Python 3</li>
+    <ul>
+        <li>pigpio library</li>
+        <li>RPi.GPIO</li>
+    </ul>
+    <li>Node.JS</li>
+    <ul>
+        <li>npm</li>
+        <li>express</li>
+        <li>ejs</li>
+        <li>body-parser</li>
+        <li>nodemon (<i>optional</i>)</li>
+    </ul>
+
+    </p>
+    </p>
+</fieldset>
