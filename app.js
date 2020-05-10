@@ -39,10 +39,11 @@ app.get('/demo', (req, res) => {
 
 
 app.get('/stats', (req, res) => {
-	var result;
+	let result;
 	exec("ls -la", (error, stdout, stderr) => {
 		//consol.log(`stdout: ${stdout}`);
-		global.result = stdout.toString();
+		result = stdout.toString();
+		consol.log(`stdout: ${result}`);
 	});
 	console.log(result)
 	res.render('stats', {result: result, t: "Ha"});
