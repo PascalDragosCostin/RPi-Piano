@@ -49,14 +49,15 @@ app.get('/stats', (req, res) => {
 	temp = temp.split("=")[1].split("'")[0];
 	frq = frq.split("=")[1]/1000000;
 	volts = volts.split("=")[1].substr(0,3);
-	ram = ram.split("=")[1].split("M")[0]
-	video = video.split("=")[1].split("M")[0]
-	console.log(temp)
-	console.log(frq)
-	console.log(volts)
-	console.log(ram)
-	console.log(video)
-	console.log(ip)
+	ram = ram.split("=")[1].split("M")[0];
+	video = video.split("=")[1].split("M")[0];
+	percentage = percentage.substr(0, 5);
+	// console.log(temp);
+	// console.log(frq);
+	// console.log(volts);
+	// console.log(ram);
+	// console.log(video);
+	// console.log(ip);
 	res.render('stats', {temp: temp, frq: frq, volts:volts, ram:ram, percentage :percentage, video:video, ip:ip });
 });
 
