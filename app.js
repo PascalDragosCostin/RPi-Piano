@@ -46,7 +46,7 @@ app.get('/stats', (req, res) => {
 	let video = execSync("/usr/bin/vcgencmd get_mem gpu").toString();
 	let ip = execSync("hostname -I | awk '{print $1}'").toString()
 	temp = temp.split("=")[1].split("'")[0];
-	freq = freq.split("=")[1]/1000000;
+	frq = frq.split("=")[1]/1000000;
 	volts = volts.split("=")[1].substr(0,3);
 	ram = ram.split("=")[1].split("M")[0]
 	video = video.split("=")[1].split("M")[0]
