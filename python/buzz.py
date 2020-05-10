@@ -120,6 +120,7 @@ def main():
             #print("Python Process runs")
             
             frequency = file.read()
+            file.seek(0)
             #print_digit(3,3)
             
             #print_frequency(6789)
