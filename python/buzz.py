@@ -117,7 +117,7 @@ def main():
       #  print_digit(2,1)
         file = open("shared_memory.txt", "r")
         while(True):
-            print("Python Process runs")
+            #print("Python Process runs")
             
             frequency = file.read()
             #print_digit(3,3)
