@@ -9,7 +9,6 @@ segments = (a, b, c, d, e, f, g) = (20, 7, 13, 19, 26, 16, 6)
 DS = (DS1, DS2, DS3, DS4) = (21, 8, 25, 5)
 
 
-
 def initialize_GPIO():
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
@@ -76,6 +75,7 @@ def print_segment(char):
     if char == 0:
         for i in range(7):
             GPIO.output(segments[i], zero[i])        
+
 
 def print_frequency(frequency):
     freq = int(frequency)

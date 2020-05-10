@@ -289,6 +289,22 @@ python.stdout.on('data', function (data) {
 });
 
 
+
+var pythonMessage;
+// spawn new child process to call the python script
+const python = spawn('python3', ['python/buzz.py', "0"]);
+// collect data from script
+python.stdout.on('data', function (data) {
+	pythonMessage = data.toString();
+	console.log(pythonMessage);
+});
+// in close event we are sure that stream from child process is closed
+python.on('close', (code) => {
+	console.log(`child process close all stdio with code ${code}`);
+
+});
+
+
 app.listen(port, () => console.log(`Serverul rulează la adresa http://localhost:${port} `));
 
 
