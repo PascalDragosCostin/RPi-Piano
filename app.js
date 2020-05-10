@@ -56,10 +56,10 @@ app.get('/stats', (req, res) => {
 	ram = ram.split("=")[1].split("M")[0];
 	video = video.split("=")[1].split("M")[0];
 	percentage = percentage.substr(0, 5);
-	dfPrecentage = df.split(/\s+/)[4];
-	dfTotal = df.split(/\s+/)[1];
-	dfAvail = df.split(/\s+/)[3];
-	dfUsed = df.split(/\s+/)[2];
+	dfPrecentage = df.split(/\s+/)[4]; 
+	dfTotal = parseInt(df.split(/\s+/)[1])/1000000;
+	dfAvail = parseInt(df.split(/\s+/)[3])/1000000;
+	dfUsed = parseInt(df.split(/\s+/)[2])/1000000;
 	// avaibleSpace = avaibleSpace.split(" ")[0];
 	// console.log(temp);
 	// console.log(frq);
