@@ -43,7 +43,7 @@ app.get('/stats', (req, res) => {
 	exec("ls -la", (error, stdout, stderr) => {
 		//consol.log(`stdout: ${stdout}`);
 		result = stdout.toString();
-		consol.log(`stdout: ${result}`);
+		console.log(`stdout: ${result}`);
 	});
 	console.log(result)
 	res.render('stats', {result: result, t: "Ha"});
