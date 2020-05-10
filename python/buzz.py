@@ -83,7 +83,6 @@ def print_frequency(frequency):
     d2 = (freq // 10) % 10
     d1 = (freq // 100) % 10
     d0 = freq // 1000
-    #print(f"{d3} {d2} {d1} {d0}")
     print_digit(0, d0)
     print_digit(1, d1)
     print_digit(2, d2)
@@ -95,52 +94,31 @@ def print_digit(digit, number):
     
     print_segment(number)
     GPIO.output(DS[digit], GPIO.LOW)
-    #print_segment(number)
-    '''
-    zero = [1,1,1,1,1,1,0]
-    
-    for i in range(7):
-        GPIO.output(segments[i], zero[i])        
-    '''
-
     time.sleep(delay_time)
     GPIO.output(DS[digit], GPIO.HIGH)
 
 
 def main():
-    print("Python Process starts...")
     pi = pigpio.pi()
     buzzer1 = 18
-    #file = open("shared_memory.txt", "w")
     try:
         initialize_GPIO()
-      #  print_digit(2,1)
         file = open("python/shared_memory.txt", "r")
         while(True):
-            #print("Python Process runs")
-            
             frequency = file.read()
             file.seek(0)
-            #print_digit(3,3)
-            
-            #print_frequency(6789)
             if frequency:
                 frequency = int(frequency)
                 pi.hardware_PWM(buzzer1, frequency, 500000)
                 print_frequency(frequency)     
     except KeyboardInterrupt:
-        print("\n")
+        pass
 
     file.close()
     GPIO.cleanup()
     pi.hardware_PWM(buzzer1, 0, 0)
     pi.stop()
-    print("Python Process stops...")
         
-
-   
-
-
 
 if __name__ == "__main__":
     main()

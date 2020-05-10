@@ -1,15 +1,4 @@
-pagina de login
-	pian 
-	? led pentru fiecare octava cu shifter
-	
+[] LOGIN (eventual permitea unui singur client odată, pentru ca este doar un buzzer pe breadboard)
 
-SOFT: Single Page Application (SPA), care sa conțină următoarele:
-LOGIN (eventual permitea unui singur client odată, pentru ca este doar un buzzer pe breadboard)
-
-HARD:
-- buzzer, dioda, tranzistor
-- leduri pentru fiecare octava (7 albastre)
-- 4 digit 7 segment display care sa arate frecventa sunetului
-
-! 4 rezistente la display pe catod
+[] leduri pentru fiecare octava (7 albastre)
 

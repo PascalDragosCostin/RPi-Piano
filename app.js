@@ -6,18 +6,12 @@ const { spawn } = require('child_process');
 const { execSync } = require("child_process");
 
 const app = express();
-
 const port = 6789;
 
-// directorul "views" va conține fișierele .ejs (html + js executat la server)
 app.set("view engine", "ejs");
-// suport pentru layout-uri - implicit fișierul care reprezintă template-ul site-ului este views/layout.ejs
 app.use(expressLayouts);
-// directorul "public" va conține toate resursele accesibile direct de către client (e.g., fișiere css, javascript, imagini)
 app.use(express.static("public"))
-// corpul mesajului poate fi interpretat ca json; datele de la formular se găsesc în format json în req.body
 app.use(bodyParser.json());
-// utilizarea unui algoritm de deep parsing care suportă obiecte în obiecte
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('./favicon.ico', express.static('favicon.ico'));
 
@@ -26,11 +20,9 @@ app.get('/', (req, res) => {
 	res.render('piano', {});
 });
 
-
 app.get('/about', (req, res) => {
 	res.render('about', {});
 });
-
 
 app.get('/demo', (req, res) => {
 	res.render('demo', {});
@@ -38,6 +30,7 @@ app.get('/demo', (req, res) => {
 
 
 app.get('/stats', (req, res) => {
+	// FILE 2
 	let temp = execSync("/usr/bin/vcgencmd measure_temp").toString();
 	let frq = execSync("/usr/bin/vcgencmd measure_clock arm").toString();
 	let volts = execSync("/usr/bin/vcgencmd measure_volts core").toString();
@@ -46,8 +39,6 @@ app.get('/stats', (req, res) => {
 	let video = execSync("/usr/bin/vcgencmd get_mem gpu").toString();
 	let ip = execSync("hostname -I | awk '{print $1}'").toString()
 	let ipGlobal  = execSync("host myip.opendns.com resolver1.opendns.com | grep \"myip.opendns.com has\" | awk '{print $4}'").toString();
-	// let freeSpacePrecentage  = execSync("df -H --output=pcent,source | grep root").toString();
-	// let avaibleSpace  = execSync("df --output=avail,source | grep root").toString();
 	let df = execSync("df | grep root").toString();
 	temp = temp.split("=")[1].split("'")[0];
 	frq = frq.split("=")[1]/1000000;
@@ -59,19 +50,14 @@ app.get('/stats', (req, res) => {
 	dfTotal = parseInt(df.split(/\s+/)[1])/1000000;
 	dfAvail = parseInt(df.split(/\s+/)[3])/1000000;
 	dfUsed = parseInt(df.split(/\s+/)[2])/1000000;
-	// avaibleSpace = avaibleSpace.split(" ")[0];
-	// console.log(temp);
-	// console.log(frq);
-	// console.log(volts);
-	// console.log(ram);
-	// console.log(video);
-	// console.log(ip);
 	res.render('stats', {temp: temp, frq: frq, volts:volts, ram:ram, percentage :percentage, video:video,
 		ip:ip, ipGlobal:ipGlobal, dfTotal:dfTotal, dfUsed: dfUsed, dfAvail:dfAvail, dfPrecentage: dfPrecentage});
 });
 
 
 ///////////////////////////////////////////
+
+// FILE 3
 let c1 = 33;
 let cs1 = 35;
 let d1 = 37;
@@ -157,9 +143,6 @@ let a7 = 3520;
 let as7 = 3729;
 let b7 = 3951;
 
-let octave = 5;
-let theme = 0;
-let isNote = 0;
 
 let octave1 = [c1, cs1, d1, ds1, e1, f1, fs1, g1, gs1, a1, as1, b1];
 let octave2 = [c2, cs2, d2, ds2, e2, f2, fs2, g2, gs2, a2, as2, b2];
@@ -169,67 +152,13 @@ let octave5 = [c5, cs5, d5, ds5, e5, f5, fs5, g5, gs5, a5, as5, b5];
 let octave6 = [c6, cs6, d6, ds6, e6, f6, fs6, g6, gs6, a6, as6, b6];
 let octave7 = [c7, cs7, d7, ds7, e7, f7, fs7, g7, gs7, a7, as7, b7];
 
-
 octave_array = [octave1, octave2, octave3, octave4, octave5, octave6, octave7];
-////////////////////
-// app.get("/c_note", (req, res) => {
-// 	// console.log("C")
-// 	// console.log(octave_array[octave-1][0])
 
-// 	var pythonMessage;
-// 	// spawn new child process to call the python script
-// 	const python = spawn('python', ['buzz.py', "ana"]);
-// 	// collect data from script
-// 	python.stdout.on('data', function (data) {
-// 		pythonMessage = data.toString();
-// 		console.log(pythonMessage);
-// 	});
-// 	// in close event we are sure that stream from child process is closed
-// 	python.on('close', (code) => {
-// 		console.log(`child process close all stdio with code ${code}`);
-// 		// send data to browser
-// 		res.send(pythonMessage)
-// 	});
-// });
-///
-
-// var isFirst = true;
-// var buzzer = { pin16: 0, pin18: 0 }
 function buzz(res, freq) {
-	// var pin;
-	// if (freq != 0) {
-	// 	isFirst = !isFirst;
-	// }
-	// if (isFirst) {
-	// 	pin = 16;
-	// }
-	// else {
-	// 	pin = 18;
-	// }
 	console.log("buzz" + freq);
 	fs.writeFileSync("python/shared_memory.txt", freq)
-
-	var pythonMessage;
-	// spawn new child process to call the python script
-	/*const python = spawn('python3', ['python/buzz.py', freq]);
-	
-	// collect data from script
-	python.stdout.on('data', function (data) {
-	 
-		pythonMessage = data.toString();
-		console.log(pythonMessage);
-	});
-	// in close event we are sure that stream from child process is closed
-	python.on('close', (code) => {
-		//console.log(`child process close all stdio with code ${code}`);
-		// send data to browser
-		res.send(pythonMessage)
-	});
-	*/
 	res.send("ok");
-
 }
-
 
 
 app.get("/c_note", (req, res) => {
@@ -280,18 +209,19 @@ app.get("/b_note", (req, res) => {
 	buzz(res, octave_array[octave - 1][11]);
 });
 
-
 app.get("/off", (req, res) => {
 	buzz(res, 0);
 });
 
+let octave = 5;
+let theme = 0;
+let isNote = 0;
 
 app.post("/set_octave", (req, res) => {
 	console.log(req.body);
 	octave = req.body.selected_octave;
 	res.send("ok");
 });
-
 
 app.post("/set_theme", (req, res) => {
 	console.log(req.body);
@@ -306,13 +236,12 @@ app.post("/set_isNote", (req, res) => {
 });
 
 app.get("/refresh", (req, res) => {
-	// console.log(octave, theme, isNote)
 	res.send({ octave: octave, theme: theme, isNote: isNote })
 });
 
+
 //////////////
 console.log("Server starts...")
-
 
 const pythonProcess = spawn('python3', ['python/buzz.py', 0]);
 
@@ -321,9 +250,7 @@ pythonProcess.stdout.on('data', function (data) {
 	console.log(pythonMessage);
 });
 
-
 app.listen(port, () => console.log(`Serverul rulează la adresa http://localhost:${port} `));
-
 
 process.on('SIGINT', function () {
 	pythonProcess.kill("SIGINT");

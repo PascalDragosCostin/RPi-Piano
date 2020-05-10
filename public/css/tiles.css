@@ -31,8 +31,6 @@
     --dark-color-hover4: #048f09;
     --dark-color-pressed4: #00ff00;
   }
-  /*  var(--bright-color); */
-  /*  var(--dark-color); */
 
 
 .brightTile {
@@ -85,4 +83,3 @@
   .darkTile+.brightTile {
     margin-left: -3.5vh;
   }
-

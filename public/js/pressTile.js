@@ -88,7 +88,8 @@ function keys_text(selected_octave, isNote) {
         $("#k10").html("La" + selected_octave);
         $("#k11").html("La#" + selected_octave);
         $("#k12").html("Si" + selected_octave);
-    } else {
+    } 
+    else {
         $("#k1").html("C" + selected_octave);
         $("#k2").html("CS" + selected_octave);
         $("#k3").html("D" + selected_octave);
@@ -126,7 +127,6 @@ $("button").on("click", function () {
     keys_text(selected_octave, isNote);  // change text on tiles
     change_octave();
 });
-
 
 
 // TILE PRESSED 
