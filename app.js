@@ -44,7 +44,7 @@ app.get('/stats', (req, res) => {
 		console.log(`stdout: ${stdout}`);
 		result = stdout.toString();
 	});
-	res.render('stats', {lsResult: result});
+	res.render('stats', {lsResult: result, t: "Ha"});
 });
 
 
