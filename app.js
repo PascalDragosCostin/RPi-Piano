@@ -39,10 +39,19 @@ app.get('/demo', (req, res) => {
 
 
 app.get('/stats', (req, res) => {
-	let result;
-	result = execSync("ls -la").toString();
-	console.log(result)
-	res.render('stats', {result: result, t: "Ha"});
+	let temp = execSync("/usr/bin/vcgencmd measure_temp").toString();
+	let frq = execSync("/usr/bin/vcgencmd measure_clock arm").toString();
+	let volts = execSync("/usr/bin/vcgencmd measure_volts core").toString();
+	let ram = execSync("/usr/bin/vcgencmd get_mem arm").toString();
+	let video = execSync("/usr/bin/vcgencmd get_mem gpu").toString();
+	let ip = execSync("ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}").toString()
+	console.log(temp)
+	console.log(frq)
+	console.log(volts)
+	console.log(ram)
+	console.log(video)
+	console.log(ip)
+	res.render('stats', {temp: temp, frq: frq, volts:volts, ram:ram, video:video, ip:ip });
 });
 
 
