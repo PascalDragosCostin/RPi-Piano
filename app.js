@@ -150,19 +150,19 @@ octave_array = [octave1, octave2, octave3, octave4, octave5, octave6, octave7];
 // 	// console.log("C")
 // 	// console.log(octave_array[octave-1][0])
 
-// 	var dataToSend;
+// 	var pythonMessage;
 // 	// spawn new child process to call the python script
 // 	const python = spawn('python', ['buzz.py', "ana"]);
 // 	// collect data from script
 // 	python.stdout.on('data', function (data) {
-// 		dataToSend = data.toString();
-// 		console.log(dataToSend);
+// 		pythonMessage = data.toString();
+// 		console.log(pythonMessage);
 // 	});
 // 	// in close event we are sure that stream from child process is closed
 // 	python.on('close', (code) => {
 // 		console.log(`child process close all stdio with code ${code}`);
 // 		// send data to browser
-// 		res.send(dataToSend)
+// 		res.send(pythonMessage)
 // 	});
 // });
 ///
@@ -182,22 +182,22 @@ function buzz(res, freq) {
 	// }
 	console.log("buzz" + freq);
 	fs.writeFileSync("python/shared_memory.txt", freq)
-	
-	var dataToSend;
+
+	var pythonMessage;
 	// spawn new child process to call the python script
 	/*const python = spawn('python3', ['python/buzz.py', freq]);
 	
 	// collect data from script
 	python.stdout.on('data', function (data) {
 	 
-		dataToSend = data.toString();
-		console.log(dataToSend);
+		pythonMessage = data.toString();
+		console.log(pythonMessage);
 	});
 	// in close event we are sure that stream from child process is closed
 	python.on('close', (code) => {
 		//console.log(`child process close all stdio with code ${code}`);
 		// send data to browser
-		res.send(dataToSend)
+		res.send(pythonMessage)
 	});
 	*/
 	res.send("ok");
@@ -278,20 +278,22 @@ app.get("/refresh", (req, res) => {
 });
 
 //////////////
+console.log("Server starts...")
 
 
+const pythonProcess = spawn('python3', ['python/buzz.py', 0]);
+
+pythonProcess.stdout.on('data', function (data) {
+	pythonMessage = data.toString();
+	console.log(pythonMessage);
+});
 
 
+app.listen(port, () => console.log(`Serverul rulează la adresa http://localhost:${port} `));
 
-
-
-
-
-console.log("Porneste server, initializeaza componenente hardware")
-
-app.listen(port, () => console.log(`Serverul rulează la adresa http://localhost:`));
 
 process.on('SIGINT', function () {
-	console.log("Opreste elementele hardware");
+	pythonProcess.kill("SIGINT");
+	console.log("Server stops...");
 	process.exit();
 });

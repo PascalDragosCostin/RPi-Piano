@@ -108,7 +108,7 @@ def print_digit(digit, number):
 
 
 def main():
-    
+    print("Python Process starts...")
     pi = pigpio.pi()
     buzzer1 = 18
     #file = open("shared_memory.txt", "w")
@@ -130,8 +130,10 @@ def main():
             file.close()
             
     except KeyboardInterrupt:
+        print("Python Process stops...")
         pass
 
+    GPIO.cleanup()
     pi.stop()
 
 
