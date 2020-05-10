@@ -49,7 +49,7 @@ app.get('/stats', (req, res) => {
 	// let freeSpacePrecentage  = execSync("df -H --output=pcent,source | grep root").toString();
 	// let avaibleSpace  = execSync("df --output=avail,source | grep root").toString();
 	let df = execSync("df | grep root");
-	close.log(df);
+	console.log(df);
 	temp = temp.split("=")[1].split("'")[0];
 	frq = frq.split("=")[1]/1000000;
 	volts = volts.split("=")[1].substr(0,3);
