@@ -281,25 +281,25 @@ app.get("/refresh", (req, res) => {
 console.log("Server starts...")
 
 
-const python = spawn('python3', ['python/buzz.py', 0]);
+// const python = spawn('python3', ['python/buzz.py', 0]);
 
-python.stdout.on('data', function (data) {
-	pythonMessage = data.toString();
-	console.log(pythonMessage);
-});
+// python.stdout.on('data', function (data) {
+// 	pythonMessage = data.toString();
+// 	console.log(pythonMessage);
+// });
 
 
 
 var pythonMessage;
 // spawn new child process to call the python script
-const python = spawn('python3', ['python/buzz.py', "0"]);
+const pythonn = spawn('python3', ['python/buzz.py', "0"]);
 // collect data from script
-python.stdout.on('data', function (data) {
+pythonn.stdout.on('data', function (data) {
 	pythonMessage = data.toString();
 	console.log(pythonMessage);
 });
 // in close event we are sure that stream from child process is closed
-python.on('close', (code) => {
+pythonn.on('close', (code) => {
 	console.log(`child process close all stdio with code ${code}`);
 
 });
@@ -309,7 +309,7 @@ app.listen(port, () => console.log(`Serverul rulează la adresa http://localhost
 
 
 process.on('SIGINT', function () {
-	python.kill("SIGINT");
+	pythonn.kill("SIGINT");
 	console.log("Server stops...");
 	process.exit();
 });
