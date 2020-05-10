@@ -30,7 +30,7 @@
 </ul>
 <figure>
     <img src="./images/Rpi.png" width="100%" alt="RPIPhoto">
-    <figcaption>Cover image</figcaption>
+    <figcaption>RaspberryPi ZERO WH</figcaption>
 </figure>
 </p>
 
@@ -44,34 +44,45 @@
     <br>
 </div>
 
-<p><b>Name: </b>Piano simulated with a buzzer and controlled from web</p>
-<p><b>Pitch: </b>The project contains web development: Front-End (HTML, CSS, JavaScript), Back-End (Node.JS) and Python3
+<p><b>Name: </b>Piano simulated with a buzzer, controlled from WEB</p>
+<p><b>Pitch: </b>The project contains WEB development: Front-End (HTML, CSS, JavaScript), Back-End (Node.JS) and Python3
     programming on
     RaspberryPi running Raspbian (Linux). </p>
 
-<p><b>Dificulty: </b>Medium WEB programming, Medium Embedded system knowledge</p>
+<p><b>Dificulty: </b>Medium WEB programming, Medium Embedded systems knowledge</p>
 <p><b>Category: </b>Raspberry Pi, Linux</p>
 <p><b>Story: </b>
 <p>
-    <p>This project combines different area of programming, like WEB development and Embedded systems.</p>
-    <p>On the RaspberryPi runs a NodeJs server. Beacause of that, the piano can be accesed by anywhere and any device that has a network
-        connection and an installed browser. The server provides a page called "Piano" in which are drawed tiles, list for themes (only visual aspects)
-        and buttons for the seven octaves.
-        <br>
-        The static part of interface is written in HTML5 and CSS3. Keys are simple divs.
-        <br>
-        The dynamic part of interface is written in JavaScript (client side), and provides visual aspect like hover or press a tile. 
-        The communication with the server (get and post methods) is also written in JavaScript. Some elementes like slected theme and selected octave are stored at server
-        for a smooth exprience.
-        <br>
-        The server processes request for different pages, but contains and the logic for interpreting the pressed keys. 
-        <br>
-        When servers starts, it spawns a python process. When a key is pressed, the servers pass the information to te python script wich controls the buzzer and the display.
-        <br>
-        The buzzer is controlled by a pwm (frquency coresponding to the note and duty cycle 50%). 
-        <br>
-        The display show the frequency of the sound that buzzer sings.
-    </p>
+<p>This project combines different area of programming, like WEB development and Embedded systems.</p>
+<p>On the RaspberryPi runs a NodeJs server. Beacause of that, the piano can be accesed by anywhere and by any device
+    that has a network
+    connection and an installed browser. The server provides a page called "Piano" presenting tiles, a list of themes
+    (only visual aspects)
+    and buttons for the seven octaves.
+</p>
+<p>
+    The static part of interface is written in HTML5 and CSS3. Keys are simple divs.
+</p>
+<p>
+    The dynamic part of interface is written in JavaScript (client side), and provides response for actions like hover
+    or press a tile.
+    The communication with the server (get and post methods) is also written in JavaScript.
+    Some elementes like slected theme and selected octave are stored on server
+    for a smooth exprience.
+</p>
+<p>
+    The server processes request for different pages, but contains and the logic for interpreting the pressed keys.
+</p>
+<p>
+    When servers starts, it spawns a python process. When a key is pressed, the servers pass the information to te
+    python script wich controls the buzzer and the display.
+</p>
+<p>
+    The buzzer is controlled by a PWM (frequency coresponding to the note and duty cycle is always 50%).
+</p>
+<p>
+    The display show the frequency of the sound that buzzer sings.
+</p>
 </p>
 
 <p>
