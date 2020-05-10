@@ -45,7 +45,7 @@ app.get('/stats', (req, res) => {
 	let ram = execSync("/usr/bin/vcgencmd get_mem arm").toString();
 	let video = execSync("/usr/bin/vcgencmd get_mem gpu").toString();
 	let ip = execSync("hostname -I | awk '{print $1}'").toString()
-	let percentage  = execSync("awk '/^Mem/ {printf("%u%%", 100*$3/$2);}' <(free -m)").toString();
+	let percentage  = execSync("awk '/^Mem/ {printf(" + "%u%%" + ", 100*$3/$2);}' <(free -m)'").toString();
 	temp = temp.split("=")[1].split("'")[0];
 	frq = frq.split("=")[1]/1000000;
 	volts = volts.split("=")[1].substr(0,3);
