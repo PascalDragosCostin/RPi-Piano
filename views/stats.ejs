@@ -2,14 +2,17 @@
     <div class="title">Server stats</div>
     <br>
 </div>
+<fieldset class="field">
+    <div class="stats">
+        <p> The server runs in a local area network and has the ip: <b><%= ip %></b>.</p>
+        <hr />
+        <p> The temperature of the processor: <b><%= temp %> °C</b>.</p>
+        <p> The frequency of the processor: <b><%= frq %> MHz</b>.</p>
+        <p> The voltage of the processor: <b><%= volts %> V</b>.</p>
+        <hr />
+        <p> The percent of RAM memory used: <b><%= percentage %>%</b>.</p>
+        <p> The amount of the RAM memory: <b><%= ram %> MB</b>.</p>
+        <p> The amount of the VIDEO memory: <b><%= video %> MB</b>.</p>
 
-<div class="stats">
-<p> The server runs in a local area network and has the ip: <b><%= ip %></b>.</p>
-<p> The temperature of the processor: <b><%= temp %> °C</b>.</p>
-<p> The frequency of the processor: <b><%= frq %> MHz</b>.</p>
-<p> The voltage of the processor: <b><%= volts %> V</b>.</p>
-<p> The percent of RAM memory used: <b><%= percentage %>%</b>.</p>
-<p> The amount of the RAM memory: <b><%= ram %> MB</b>.</p>
-<p> The amount of the VIDEO memory: <b><%= video %> MB</b>.</p>
-
-</div>
+    </div>
+</fieldset>
