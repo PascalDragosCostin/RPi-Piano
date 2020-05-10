@@ -48,7 +48,7 @@ app.get('/stats', (req, res) => {
 	let ipGlobal  = execSync("host myip.opendns.com resolver1.opendns.com | grep \"myip.opendns.com has\" | awk '{print $4}'").toString();
 	// let freeSpacePrecentage  = execSync("df -H --output=pcent,source | grep root").toString();
 	// let avaibleSpace  = execSync("df --output=avail,source | grep root").toString();
-	let df = execSync("df | grep root");
+	let df = execSync("df | grep root").toString();
 	console.log(df);
 	temp = temp.split("=")[1].split("'")[0];
 	frq = frq.split("=")[1]/1000000;
