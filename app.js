@@ -39,7 +39,7 @@ app.get('/demo', (req, res) => {
 
 app.get('/stats', (req, res) => {
 	var result;
-	exec("ls -la", (error, stdout, stderr) => {
+	spawn("ls -la", (error, stdout, stderr) => {
 		console.log(`stdout: ${stdout}`);
 		result = stdout;
 	});
