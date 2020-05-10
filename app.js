@@ -40,7 +40,7 @@ app.get('/demo', (req, res) => {
 
 app.get('/stats', (req, res) => {
 	let result;
-	result = execSync("ls -la");
+	result = execSync("ls -la").toString();
 	console.log(result)
 	res.render('stats', {result: result, t: "Ha"});
 });
