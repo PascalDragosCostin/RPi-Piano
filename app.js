@@ -46,20 +46,26 @@ app.get('/stats', (req, res) => {
 	let video = execSync("/usr/bin/vcgencmd get_mem gpu").toString();
 	let ip = execSync("hostname -I | awk '{print $1}'").toString()
 	let ipGlobal  = execSync("host myip.opendns.com resolver1.opendns.com | grep \"myip.opendns.com has\" | awk '{print $4}'").toString();
-	
+	// let freeSpacePrecentage  = execSync("df -H --output=pcent,source | grep root").toString();
+	// let avaibleSpace  = execSync("df --output=avail,source | grep root").toString();
+	let df = execSync("df | grep root");
+	close.log(df);
 	temp = temp.split("=")[1].split("'")[0];
 	frq = frq.split("=")[1]/1000000;
 	volts = volts.split("=")[1].substr(0,3);
 	ram = ram.split("=")[1].split("M")[0];
 	video = video.split("=")[1].split("M")[0];
 	percentage = percentage.substr(0, 5);
+	// freeSpacePrecentage = freeSpacePrecentage.split("%")[0];
+	// avaibleSpace = avaibleSpace.split(" ")[0];
 	// console.log(temp);
 	// console.log(frq);
 	// console.log(volts);
 	// console.log(ram);
 	// console.log(video);
 	// console.log(ip);
-	res.render('stats', {temp: temp, frq: frq, volts:volts, ram:ram, percentage :percentage, video:video, ip:ip, ipGlobal:ipGlobal });
+	res.render('stats', {temp: temp, frq: frq, volts:volts, ram:ram, percentage :percentage, video:video,
+		ip:ip, ipGlobal:ipGlobal, freeSpacePrecentage:"0" });
 });
 
 
