@@ -115,7 +115,7 @@ def main():
     try:
         initialize_GPIO()
       #  print_digit(2,1)
-        file = open("python\shared_memory.txt", "r")
+        file = open("python/shared_memory.txt", "r")
         while(True):
             #print("Python Process runs")
             
