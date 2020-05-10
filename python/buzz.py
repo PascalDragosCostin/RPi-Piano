@@ -116,7 +116,7 @@ def main():
         initialize_GPIO()
       #  print_digit(2,1)
         while(True):
-            
+            print("Python Process runs")
             
             file = open("shared_memory.txt", "r")
             frequency = file.read()
