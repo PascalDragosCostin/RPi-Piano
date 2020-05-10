@@ -115,10 +115,10 @@ def main():
     try:
         initialize_GPIO()
       #  print_digit(2,1)
+        file = open("shared_memory.txt", "r")
         while(True):
             print("Python Process runs")
             
-            file = open("shared_memory.txt", "r")
             frequency = file.read()
             #print_digit(3,3)
             
@@ -126,12 +126,11 @@ def main():
             if frequency:
                 frequency = int(frequency)
                 pi.hardware_PWM(buzzer1, frequency, 500000)
-                print_frequency(frequency)
-            file.close()
-            
+                print_frequency(frequency)     
     except KeyboardInterrupt:
         print("Interrupt python process")
 
+    file.close()
     GPIO.cleanup()
     pi.hardware_PWM(buzzer1, 0, 0)
     pi.stop()
