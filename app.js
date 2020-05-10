@@ -41,10 +41,11 @@ app.get('/demo', (req, res) => {
 app.get('/stats', (req, res) => {
 	var result;
 	exec("ls -la", (error, stdout, stderr) => {
-		console.log(`stdout: ${stdout}`);
-		result:String = stdout.toString();
+		//consol.log(`stdout: ${stdout}`);
+		global.result = stdout.toString();
 	});
-	res.render('stats', {lsResult: "DD", t: "Ha"});
+	console.log(result)
+	res.render('stats', {result: result, t: "Ha"});
 });
 
 
