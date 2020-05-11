@@ -123,3 +123,25 @@ p {
 hr{
     border-top: 1px solid #e4ffff;
 }
+
+figure{
+    padding: 2px 10px;
+    /* border: 5px solid red; */
+    margin:0px auto;
+    width:"100%";
+}
+
+.container{
+    display: block;
+    /* border: 3px solid yellow; */
+}
+
+.element{
+    display: block;
+    /* border: 3px solid green; */
+    text-align: center;
+}
+
+iframe{
+    border-radius: 30px;
+}

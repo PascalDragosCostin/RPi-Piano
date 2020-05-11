@@ -1,7 +1,6 @@
 const { execSync } = require("child_process");
 
 exports.getServerStats = function () {
-
     let temp = execSync("/usr/bin/vcgencmd measure_temp").toString();
     let frq = execSync("/usr/bin/vcgencmd measure_clock arm").toString();
     let volts = execSync("/usr/bin/vcgencmd measure_volts core").toString();
@@ -11,6 +10,7 @@ exports.getServerStats = function () {
     let ip = execSync("hostname -I | awk '{print $1}'").toString()
     let ipGlobal  = execSync("host myip.opendns.com resolver1.opendns.com | grep \"myip.opendns.com has\" | awk '{print $4}'").toString();
     let df = execSync("df | grep root").toString();
+    
     temp = temp.split("=")[1].split("'")[0];
     frq = frq.split("=")[1]/1000000;
     volts = volts.split("=")[1].substr(0,3);

@@ -62,13 +62,12 @@
 
 <div class="row">
   <div class="dcol-sm-12 col-xs-12 col-md-12 col-lg-12 text-center">
-    <button class="dcol-sm-1 col-xs-1 col-md-1 col-lg-1" id="1" type="button">First</button>
-    <button class="dcol-sm-1 col-xs-1 col-md-1 col-lg-1" id="2" type="button">Second</button>
-    <button class="dcol-sm-1 col-xs-1 col-md-1 col-lg-1" id="3" type="button">Third</button>
-    <button class="dcol-sm-1 col-xs-1 col-md-1 col-lg-1" id="4" type="button">Fourth</button>
-    <button class="dcol-sm-1 col-xs-1 col-md-1 col-lg-1" id="5" type="button">Fifth</button>
-    <button class="dcol-sm-1 col-xs-1 col-md-1 col-lg-1" id="6" type="button">Sixth</button>
-    <button class="dcol-sm-1 col-xs-1 col-md-1 col-lg-1" id="7" type="button">Seventh</button>
+    <% var i;
+    var label = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh"]
+    %>
+    <% for(i=1; i <8; ++i ) {%> 
+      <button class="dcol-sm-1 col-xs-1 col-md-1 col-lg-1" id="<%=i %> " type="button"><%=label[i - 1]%></button>
+    <% } %> 
   </div>
 </div>
 <br />

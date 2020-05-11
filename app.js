@@ -32,9 +32,7 @@ app.get('/demo', (req, res) => {
 
 
 app.get('/stats', (req, res) => {
-	// FILE 2
-	// res.send(moduleStats.getServerStats())
-	res.render('stats', moduleStatsgetServerStats());
+	res.render('stats', moduleStats.getServerStats());
 });
 
 
@@ -138,7 +136,6 @@ app.get("/refresh", (req, res) => {
 console.log("Server starts...")
 
 const pythonProcess = spawn('python3', ['python/buzz.py', 0]);
-
 
 
 app.listen(port, () => console.log(`Serverul rulează la adresa http://localhost:${port} `));
