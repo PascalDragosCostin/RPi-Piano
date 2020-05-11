@@ -139,6 +139,13 @@ console.log("Server starts...")
 
 const pythonProcess = spawn('python3', ['python/buzz.py', 0]);
 
+pythonProcess.stdout.on('data', function(data) {
+
+	console.log(data.toString());
+	res.write(data);
+});
+
+
 app.listen(port, () => console.log(`Serverul rulează la adresa http://localhost:${port} `));
 
 process.on('SIGINT', function () {
