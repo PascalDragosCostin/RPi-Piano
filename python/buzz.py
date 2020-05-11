@@ -13,7 +13,6 @@ def initialize_GPIO():
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
 
-
     for digit in DS:
         GPIO.setup(digit, GPIO.OUT)
         GPIO.output(digit, GPIO.HIGH)
