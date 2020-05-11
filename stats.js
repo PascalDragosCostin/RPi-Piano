@@ -25,7 +25,4 @@ exports.getServerStats = function () {
     return {temp: temp, frq: frq, volts:volts, ram:ram, percentage :percentage, video:video,
         ip:ip, ipGlobal:ipGlobal, dfTotal:dfTotal, dfUsed: dfUsed, dfAvail:dfAvail, dfPrecentage: dfPrecentage};
 
-    // console.log("Stats.js");
-
-    // return {a:"Ana", b:"Maria"}
 }
