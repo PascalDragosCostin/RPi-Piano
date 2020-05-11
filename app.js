@@ -32,7 +32,9 @@ app.get('/demo', (req, res) => {
 
 
 app.get('/stats', (req, res) => {
-	res.render('stats', moduleStats);
+	// FILE 2
+	// res.send(moduleStats.getServerStats())
+	res.render('stats', moduleStatsgetServerStats());
 });
 
 
