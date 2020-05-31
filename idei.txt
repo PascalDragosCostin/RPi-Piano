@@ -1,4 +1,0 @@
-[] LOGIN (eventual permitea unui singur client odată, pentru ca este doar un buzzer pe breadboard)
-
-[] leduri pentru fiecare octava (7 albastre)
-
