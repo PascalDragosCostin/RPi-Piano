@@ -15,6 +15,14 @@ themes = [["var(--bright-color)", "var(--bright-color-hover)", "var(--bright-col
 ];
 
 
+
+$("#theme").on("change", function () {
+    selected_theme = this.selectedIndex;  // Number of selected_octave
+    // alert(selected_theme);
+    keys_color(selected_theme);  // change text on tiles
+    change_theme(selected_theme);
+});
+
 function keys_color(selected_theme) {
     $("#c1").css("background", themes[selected_theme][0]);
     $("#c2").css("background", themes[selected_theme][3]);
@@ -32,13 +40,6 @@ function keys_color(selected_theme) {
     $(".darkTileText").css("color", themes[selected_theme][0]);
 };
 
-$("#theme").on("change", function () {
-    selected_theme = this.selectedIndex;  // Number of selected_octave
-    // alert(selected_theme);
-    keys_color(selected_theme);  // change text on tiles
-    change_theme(selected_theme);
-});
-
 function change_theme() {
     $.ajax({
         url: "/set_theme",
@@ -47,6 +48,7 @@ function change_theme() {
     });
 }
 
+// CHANGE NOTE OR CHORDS
 
 $("#isNote").on("change", function () {
     isNote = this.selectedIndex;  // Number of selected_octave
@@ -54,6 +56,7 @@ $("#isNote").on("change", function () {
     keys_text(selected_octave, isNote);  // change text on tiles
     change_isNote(isNote);
 });
+
 
 function change_isNote(isNote) {
     $.ajax({
@@ -274,13 +277,13 @@ $("#c11").mouseover(function () {
 var map = {}
 $("body").on("keydown", function (e) {
     var key = e.which;
-    console.log(map)
-    console.log(map[key])
-    console.log(map[key] == undefined || map[key] == false)
+    // console.log(map)
+    // console.log(map[key])
+    // console.log(map[key] == undefined || map[key] == false)
 
     if (map[key] == undefined || map[key] == false) {
         map[key] = true;
-        console.log("HEEERE")
+        // console.log("HEEERE")
         switch (key) {
             case 90:
                 $.ajax("/cs_note");
