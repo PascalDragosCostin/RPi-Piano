@@ -3,12 +3,12 @@ const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const bodyParser = require("body-parser")
 const { spawn } = require('child_process');
+const session = require("express-session");
 
 const moduleOctave = require('./octave');
 const moduleStats = require('./stats');
 
 const app = express();
-const port = 6789;
 
 app.set("view engine", "ejs");
 app.use(expressLayouts);
@@ -16,6 +16,34 @@ app.use(express.static("public"))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('./favicon.ico', express.static('favicon.ico'));
+
+app.use(session({
+    secret: "PD",
+    cookie: {}
+}));
+
+var cfg = JSON.parse(fs.readFileSync("cfg.json"));
+const port = cfg.port;
+const authorizationCode = cfg.authorizationCode;
+
+
+app.use(function (req, res, next) {
+	res.locals.session = req.session;
+	if(!session.isAuthorized){
+		if(req.path == "/verify-code")
+		{
+			if(req.body.code == authorizationCode)
+			{
+				session.isAuthorized = true;
+			}
+			res.redirect("/")
+		}
+		res.render("authorize", {} )
+	}
+	else{
+		next();
+	}
+});
 
 
 app.get('/', (req, res) => {
@@ -29,7 +57,6 @@ app.get('/about', (req, res) => {
 app.get('/demo', (req, res) => {
 	res.render('demo', {});
 });
-
 
 app.get('/stats', (req, res) => {
 	res.render('stats', moduleStats.getServerStats());
@@ -131,6 +158,10 @@ app.get("/refresh", (req, res) => {
 	res.send({ octave: octave, theme: theme, isNote: isNote })
 });
 
+
+app.use((req, res, next) => {
+	res.redirect("/");
+});
 
 //////////////
 console.log("Server starts...")
