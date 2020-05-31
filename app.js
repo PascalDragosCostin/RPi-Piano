@@ -38,7 +38,6 @@ app.use(function (req, res, next) {
 			{
 				session.isAuthorized = true;
 			}
-			res.redirect("/")
 		}
 		res.render("authorize", {} )
 	}
