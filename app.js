@@ -19,7 +19,9 @@ app.use('./favicon.ico', express.static('favicon.ico'));
 
 app.use(session({
     secret: "PD",
-    cookie: {}
+	cookie: {},
+	resave: true,
+    saveUninitialized: true
 }));
 
 var cfg = JSON.parse(fs.readFileSync("cfg.json"));
