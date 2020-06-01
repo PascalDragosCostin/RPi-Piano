@@ -37,6 +37,7 @@ app.use(function (req, res, next) {
 			if(req.body.code == authorizationCode)
 			{
 				session.isAuthorized = true;
+				next();
 			}
 		}
 		res.render("authorize", {} )
